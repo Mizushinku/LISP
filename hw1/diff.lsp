@@ -1,0 +1,12 @@
+(defun diff (path1 path2)
+	(with-open-file (file1 path1 :direction :input)
+	(with-open-file (file2 path2 :direction :input)
+		(loop for line1 = (read-line file1 nil)
+			for line2 = (read-line file2 nil)
+			while (or line1 line2)
+			do (progn (format t "~A  ~A~%" line1 line2))
+		)
+	))
+)
+
+(diff "./file1.txt" "./file2.txt")
