@@ -1,5 +1,5 @@
-123
-456
-789
-abcd
-ABCD
+#include <stdio.h>
+int main() {
+    printf(“Hello World”);
+    return 0;
+}
