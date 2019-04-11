@@ -23,15 +23,6 @@
         nil)
 )
 
-(defun read-input ()
-    (loop for input = (read-line)
-        while (not (equal input ""))
-        do(progn
-            (format T "~A~%" input)
-        )
-    )
-)
-
 (defun fib1 (n)
     (if (< n 2)
         n
@@ -42,4 +33,13 @@
     (if (equal n 0)
         ans
         (fib2 (- n 1) next_ans (+ ans next_ans)))
+)
+
+(defun read-input ()
+    (loop for input = (read-line)
+        while (not (equal input ""))
+        do(progn
+            (format T "~A~%" input)
+        )
+    )
 )
