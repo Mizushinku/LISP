@@ -21,10 +21,11 @@ goldbach(N, P, Q) :-
     prime(P),
     Q is N - P,
     prime(Q),
-    !,
-    format('~d ~d~n', [P, Q]).
+    format('~d ~d~n', [P, Q]),
+    P >= N / 2.
 goldbach(N, P, _) :-
     NextP is P + 1,
+    NextP =< N / 2,
     goldbach(N, NextP, _).
 
 

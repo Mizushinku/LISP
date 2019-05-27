@@ -49,10 +49,8 @@ make_connect(InputStream, E) :-
     read_string(InputStream, "\n ", "\r\t", _, N2),
     number_string(N1_num, N1),
     number_string(N2_num, N2),
-    %assertz(connected(N1_num, N1_num)),
     assertz(connected(N1_num, N2_num)),
     assertz(connected(N2_num, N1_num)),
-    %assertz(connected(N2_num, N2_num)),
     Ep is E - 1,
     make_connect(InputStream,Ep).
 

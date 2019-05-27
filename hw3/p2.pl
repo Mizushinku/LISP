@@ -1,11 +1,12 @@
 % Lowest Common Ancestor
 
 ancestor(A, B) :- parent(A, B).
-ancestor(A, B) :- parent(X, B), parent(A, X).
+ancestor(A, B) :- parent(X, B), ancestor(A, X).
 
 lca(A, B, LCA) :-
     ancestor(LCA, A),
-    ancestor(LCA, B).
+    ancestor(LCA, B),
+    !.
 
 find_lca(InputStream, N) :-
     N > 0,
